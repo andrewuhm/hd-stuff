@@ -1,0 +1,172 @@
+body {
+	background-color: #fff;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	margin: 0 auto;
+	background-position: center 0px;
+	background-repeat: repeat-y;
+	width: 985px;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	font-size: 11px;
+}
+
+h1 {
+	padding-left: 10px;
+}
+
+div.clear {
+	clear: both;
+	visibility: hidden;
+}
+
+div.clear hr {
+	display: none;
+}
+
+#app-header {
+	padding: 3px 0px 3px 0px;
+}
+
+#page-header {
+	padding: 3px 0px 3px 0px;
+}
+
+div.spacer {
+	padding: 3px 0px 3px 0px;
+}
+
+#breadcrumbs {
+	overflow: hidden;
+	padding: 3px 10px 3px 20px;
+	background-image: url(../img/breadcrumbs.png);
+	background-repeat: repeat-x;
+	border: none;
+	background-color: #fff !important;
+	font-size: 9px;
+}
+
+#breadcrumbs a {
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+
+#breadcrumbs #link-sign-out {border: 0px none; float: right;}
+
+.xright {
+	text-align: right;
+}
+
+.xleft a:link,.xleft a:visited,.xright a:active {
+	color: #666666;
+}
+
+.xleft a:hover {
+	color: #003300;
+}
+
+.task-actions	{background-color:#EEEEEE; border:1px solid #CCCCCC; padding:10px; width: 600px; margin: 0 0 10px 0; }
+.task-actions .task-response .result-list {max-height: 300px; overflow: scroll;}
+.task-actions #task-indicator {display: none; height:20px; margin-left:10px; vertical-align:bottom; }
+.task-actions #task-indicator.active {display: inline;} 
+
+div.error {
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	color: red;
+}
+
+#success {
+	font-weight: bold;
+	font-size:12px;
+	color: green;
+}
+
+span.large-header {
+	font-weight: bold;
+	color: #000000;
+	font-size: 20px;
+}
+
+span.header {
+	font-weight: bold;
+	color: #000000;
+	font-size: 11px;
+}
+
+span.required {
+	font-weight: bold;
+	color: red;
+}
+
+table.results {
+	text-align: center;
+	color: #404040;
+	width: 500px;
+	background-color: #fafafa;
+	border: 1px solid #000000;
+	border-spacing: 0px;
+}
+
+table.results a {
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+
+table.results th.header {
+	background-color: #BEC8D1;
+	border: 1px solid #000000;
+	text-align: left;
+	text-indent: 5px;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 11px;
+	color: #404040;
+}
+
+table.results td {
+	border: 1px solid #000000;
+	text-align: left;
+	text-indent: 10px;
+	font-family: Verdana, sans-serif, Arial;
+	font-weight: normal;
+	font-size: 11px;
+	color: #404040;
+	background-color: #fafafa;
+}
+
+table.tbl-form {
+	border: 1px solid #000000;
+	padding: 5px 0px 5px 0px;
+	border-spacing: 5px;
+}
+
+td.header {
+	font-weight: bold;
+	text-align: right;
+}
+
+table.content-datagrid				 		{border: 1px solid #CCC; }
+table.content-datagrid thead tr td	 		{background-color: #CCC; font-weight: bold; }
+table.content-datagrid tr.data-row td		{background-color: #EEE; }
+table.content-datagrid tr.data-row-alt td	{background-color: #DDD; }
+table.content-datagrid tr.data-row-active td{background-color: #0557A9; }
+table.content-datagrid tr td				{padding: 1px 2px 1px 2px;}
+
+table.content-datagrid tr.even				{background-color: #EEE; }
+table.content-datagrid tr.odd				{background-color: #DDD; }
+
+
+table.content-datagrid thead tr td.overall	{width: 20px;}
+table.content-datagrid thead tr td.round	{width: 20px;}
+table.content-datagrid thead tr td.pick		{width: 20px;}
+table.content-datagrid thead tr td.team		{width: 80px;}
+table.content-datagrid thead tr td.note		{width: 130px;}
+table.content-datagrid thead tr td.player	{}
+table.content-datagrid thead tr td.action	{width: *; white-space: nowrap;}
+
+.gc-settings-box		{background-color:#CCC; padding: 5px 18px 15px 18px; height:700px; margin: 5px;}
+#gc-ad-management		{float: left; width: 260px;}
+#gc-tab-management		{float: left; width: 200px; height:700px;}

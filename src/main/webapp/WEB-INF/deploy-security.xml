@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+<!-- 
+	<global-method-security pre-post-annotations="enabled">
+	
+		 AspectJ pointcut expression that locates our "post" method and applies 
+			security that way <protect-pointcut expression="execution(* bigbank.*Service.post*(..))" 
+			access="ROLE_TELLER"/>
+			
+	</global-method-security>
+	-->
+
+	<http auto-config="false">
+		<intercept-url pattern="/" access="" />
+		<intercept-url pattern="/styles/**" filters="none" />
+		<!-- Disable web URI authorization, as we're using <global-method-security> 
+			and have @Secured the services layer instead <intercept-url pattern="/listAccounts.html" 
+			access="isRememberMe()" /> <intercept-url pattern="/post.html" access="hasRole('ROLE_TELLER')" 
+			/> -->
+		<intercept-url pattern="/**" access="ROLE_com-hotdeploy" />
+		<form-login />
+		<logout />
+		<!-- Uncomment to enable X509 client authentication support <x509 /> -->
+		<!-- Uncomment to limit the number of sessions a user can have -->
+	</http>
+	
+	<authentication-manager>
+		<authentication-provider ref="crowdAuthenticationProvider" />
+	</authentication-manager>
+
+	<beans:bean id="crowdUserDetailsService"
+		class="com.atlassian.crowd.integration.springsecurity.user.CrowdUserDetailsServiceImpl">
+		<beans:property name="authenticationManager" ref="crowdAuthenticationManager" />
+		<beans:property name="groupMembershipManager" ref="crowdGroupMembershipManager" />
+		<beans:property name="userManager" ref="crowdUserManager" />
+		<beans:property name="authorityPrefix" value="ROLE_" />
+	</beans:bean>
+	<beans:bean id="crowdAuthenticationProvider"
+		class="com.atlassian.crowd.integration.springsecurity.RemoteCrowdAuthenticationProvider">
+		<beans:constructor-arg ref="crowdAuthenticationManager" />
+		<beans:constructor-arg ref="httpAuthenticator" />
+		<beans:constructor-arg ref="crowdUserDetailsService" /> 
+	</beans:bean>
+	
+	<beans:bean id="securityContextHolderStrategy" class="org.springframework.security.core.context.SecurityContextHolder" factory-method="getContextHolderStrategy" />
+
+</beans:beans>
