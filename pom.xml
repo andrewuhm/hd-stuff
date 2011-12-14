@@ -12,6 +12,7 @@
 		<org.slf4j.version>1.5.10</org.slf4j.version>
 	</properties>
 	<dependencies>
+		<!-- Testing change to file in test branch -->
 
 		<!-- Spring -->
 		<dependency>
